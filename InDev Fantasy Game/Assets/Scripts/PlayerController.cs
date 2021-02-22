@@ -18,7 +18,17 @@ public class PlayerController : MonoBehaviour
     bool curserlock = true;
     float camerapitch = 0.0f;
     bool jumpcooldown = false;
-    
+
+    public float knockbackforce = 100f;
+    public int InitialHealth = 100;
+    public float hurttime = 0.5f;
+
+    private int health;
+    public int Health { get { return health; } }
+    private bool hurt;
+    private bool killed;
+    public bool Killed { get { return killed; } }
+
     Vector2 currentDir = Vector2.zero;
     CharacterController controller = null;
     float velocityY = 0.0f;
@@ -29,7 +39,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(curserlock)
+        health = InitialHealth;
+        if (curserlock)
         {
             controller = GetComponent<CharacterController>();
             Cursor.lockState = CursorLockMode.Locked;
@@ -104,5 +115,54 @@ public class PlayerController : MonoBehaviour
         {
             Walkspeed = 6f;
         }
+    }
+    void OnTriggerEnter(Collider otherCollider)
+    {
+       
+        if (hurt == false)
+        {
+            GameObject hazard = null;
+            if (otherCollider.GetComponent<Enemy>() != null)
+            {
+                Enemy enemy = otherCollider.GetComponent<Enemy>();
+                if (enemy.killed == false)
+                {
+                    hazard = enemy.gameObject;
+                    health -= enemy.damage;
+                    Debug.Log("Player Hit, Remaining Health: " + health);
+                    hurt = true;
+                }
+
+            }
+            if (hazard != null)
+            {
+                hurt = true;
+                Vector3 hurtDirection = (transform.position - hazard.transform.position).normalized;
+                Vector3 knockbackDirection = (hurtDirection + Vector3.up).normalized;
+                GetComponent<ForceReceiver>().AddForce(knockbackDirection, knockbackforce);
+                StartCoroutine(HurtRoutine());
+            }
+            if (health <= 0)
+            {
+                if (killed == false)
+                {
+                    killed = true;
+                    OnKill();
+                }
+            }
+        }
+
+    }
+    IEnumerator HurtRoutine()
+    {
+        yield return new WaitForSeconds(hurttime);
+        hurt = false;
+    }
+    private void OnKill()
+    {
+        Destroy(this);
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<CharacterController>().enabled = false;
+        
     }
 }

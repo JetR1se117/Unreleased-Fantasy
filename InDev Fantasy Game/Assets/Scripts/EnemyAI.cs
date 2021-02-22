@@ -83,6 +83,8 @@ public class EnemyAI : MonoBehaviour
             //Attack
             Debug.Log("hit");
 
+
+
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
