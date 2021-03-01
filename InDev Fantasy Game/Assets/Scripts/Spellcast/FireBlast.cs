@@ -8,16 +8,23 @@ public class FireBlast : MonoBehaviour
     public Rigidbody bulletPrefab;
     public float shootSpeed = 300;
     public Transform playerTrans;
+    float CoolDown = 0f;
     void Update()
     {
+        CoolDown -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            shootfire();
+           
+            if (CoolDown <= 0f)
+            {
+                shootfire();
+            }
         }
     }
 
     void shootfire()
     {
+        CoolDown = 1f;
         // Instantiate a new bullet at the players position and rotation
         // later you might want to add an offset here or 
         // use a dedicated spawn transform under the player
@@ -27,6 +34,7 @@ public class FireBlast : MonoBehaviour
         projectile.velocity = transform.forward * shootSpeed;
     }
 }
+
 /*  ::::: MY OLD CODE :::::
  
  
