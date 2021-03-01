@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
 
     //from "FireBlast" script <James>
     public Rigidbody bulletPrefab;
-    public float shootSpeed = 300;
+    public float shootSpeed = 100;
     public Transform playerTrans;
     // </James>
     

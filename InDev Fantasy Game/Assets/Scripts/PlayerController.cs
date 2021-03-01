@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     bool curserlock = true;
     float camerapitch = 0.0f;
     bool jumpcooldown = false;
+    public Text healthText;
 
     public float knockbackforce = 100f;
     public int InitialHealth = 100;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         LocalPlayer = this;
         health = InitialHealth;
+        healthText.text = "Health: " + health;
         if (curserlock)
         {
             controller = GetComponent<CharacterController>();
@@ -139,9 +141,7 @@ public class PlayerController : MonoBehaviour
                 if (enemy.killed == false)
                 {
                     hazard = enemy.gameObject;
-                    health -= enemy.damage;
-                    Debug.Log("Player Hit, Remaining Health: " + health);
-                    hurt = true;
+                    Shot(enemy.damage);
                 }
 
             }
@@ -168,13 +168,18 @@ public class PlayerController : MonoBehaviour
     {
         if (health > 0)
         {
-        health -= Damage;
-        Debug.Log("Player Hit, Remaining Health: " + health);
-        hurt = true;
+            health -= Damage;
+            Debug.Log("Player Hit, Remaining Health: " + health);
+            healthText.text = "Health: " + health;
+            hurt = true;
         }
-        else
+        if (health <= 0)
         {
-            OnKill();
+            if (killed == false)
+            {
+                killed = true;
+                OnKill();
+            }
         }
 
     }
