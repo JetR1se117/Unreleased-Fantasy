@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Range(0.0f, 0.5f)] float mouseSmooth = 0.03f;
     [SerializeField] float jumpHeight = 3.0f;
 
-    public Canvas deathScreen;
+    public GameObject deathScreen;
     
     bool curserlock = true;
     float camerapitch = 0.0f;
@@ -162,9 +162,11 @@ public class PlayerController : MonoBehaviour
     }
     private void OnKill()
     {
+        Debug.Log("Dead");
+        deathScreen.SetActive(true);
         Destroy(this);
         GetComponent<PlayerController>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
-        deathScreen.enabled = true;
+        
     }
 }
