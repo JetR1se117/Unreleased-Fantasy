@@ -89,18 +89,11 @@ public class EnemyAI : MonoBehaviour
             //Attack
             Debug.Log("hit");
             
-            
+                shootfire();
 
-            alreadyAttacked = true;
+                alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
-        
-        // <James?
-        if (transform.GetComponent<EnemyShooterTEST>())
-        {
-            shootfire();
-        }
-        // </James>
     }
     
     void shootfire()    // <James>

@@ -2698,7 +2698,7 @@ MonoBehaviour:
   waitingTime: 1
   bulletPrefab: {fileID: 3175663435406733652, guid: 072843951de01214ca77b2d3338941d1,
     type: 3}
-  shootSpeed: 300
+  shootSpeed: 15
   playerTrans: {fileID: 2139092602}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 20
