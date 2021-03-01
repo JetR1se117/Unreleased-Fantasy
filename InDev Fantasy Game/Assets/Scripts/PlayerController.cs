@@ -56,6 +56,13 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMouseLook();
         movement();
+        
+        // <James>
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            OnKill();
+        }
+        // </James>
     }
 
     void UpdateMouseLook()
