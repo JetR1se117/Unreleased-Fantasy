@@ -1932,7 +1932,7 @@ MonoBehaviour:
   jumpHeight: 3
   deathScreen: {fileID: 207919852}
   knockbackforce: 100
-  InitialHealth: 100
+  InitialHealth: 40
   hurttime: 0.5
 --- !u!4 &1624223441
 Transform:
