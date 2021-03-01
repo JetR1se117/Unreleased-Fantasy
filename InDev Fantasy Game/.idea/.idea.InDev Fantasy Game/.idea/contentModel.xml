@@ -25,8 +25,17 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="EnemyAI.cs" t="Include" />
+          <e p="Enemy" t="Include">
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyAI.cs" t="Include" />
+          </e>
+          <e p="ForceReceiver.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="Spellcast" t="Include">
+            <e p="FireBlast.cs" t="Include" />
+            <e p="Projectile.cs" t="Include" />
+            <e p="Spawner.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="InDev Fantasy Game.sln" t="IncludeFlat" />

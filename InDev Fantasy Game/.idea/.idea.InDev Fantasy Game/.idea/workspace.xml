@@ -10,14 +10,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAI - Copy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1onk9nzzob2Tzh3XdXkjrUHqL6A" />
@@ -63,6 +60,7 @@
       <updated>1613929594859</updated>
       <workItem from="1613929600324" duration="711000" />
       <workItem from="1613930390773" duration="1093000" />
+      <workItem from="1614567258513" duration="279000" />
     </task>
     <servers />
   </component>

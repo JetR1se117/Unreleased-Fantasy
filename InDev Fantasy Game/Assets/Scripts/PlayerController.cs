@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Range(0.0f, 0.5f)] float mouseSmooth = 0.03f;
     [SerializeField] float jumpHeight = 3.0f;
 
+    public Canvas deathScreen;
+    
     bool curserlock = true;
     float camerapitch = 0.0f;
     bool jumpcooldown = false;
@@ -163,6 +165,6 @@ public class PlayerController : MonoBehaviour
         Destroy(this);
         GetComponent<PlayerController>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
-        
+        deathScreen.enabled = true;
     }
 }
