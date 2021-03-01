@@ -12,6 +12,12 @@ public class EnemyAI : MonoBehaviour
     public float health;
     public float waitingTime;
 
+    //from "FireBlast" script <James>
+    public Rigidbody bulletPrefab;
+    public float shootSpeed = 300;
+    public Transform playerTrans;
+    // </James>
+    
     //Idle
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -82,13 +88,33 @@ public class EnemyAI : MonoBehaviour
         {
             //Attack
             Debug.Log("hit");
-
-
+            
+            
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+        
+        // <James?
+        if (transform.GetComponent<EnemyShooterTEST>())
+        {
+            shootfire();
+        }
+        // </James>
     }
+    
+    void shootfire()    // <James>
+    {
+        // Instantiate a new bullet at the players position and rotation
+        // later you might want to add an offset here or 
+        // use a dedicated spawn transform under the player
+        var projectile = Instantiate(bulletPrefab, playerTrans.position, playerTrans.rotation);
+
+        //Shoot the Bullet in the forward direction of the player
+        projectile.velocity = transform.forward * shootSpeed;
+    } 
+    // </James>
+    
     private void ResetAttack()
     {
         alreadyAttacked = false;

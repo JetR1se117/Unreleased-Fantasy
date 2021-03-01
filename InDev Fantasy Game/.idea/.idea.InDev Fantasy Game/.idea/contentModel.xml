@@ -28,6 +28,7 @@
           <e p="Enemy" t="Include">
             <e p="Enemy.cs" t="Include" />
             <e p="EnemyAI.cs" t="Include" />
+            <e p="EnemyShooterTEST.cs" t="Include" />
           </e>
           <e p="ForceReceiver.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />

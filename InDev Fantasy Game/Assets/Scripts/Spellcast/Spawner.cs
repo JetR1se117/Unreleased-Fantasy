@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,11 +23,19 @@ public class Spawner : MonoBehaviour
         Destroy(gameObject, projectileLife);
     }
 
-/*
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Debug.Log("EGG");
+        }
+    }
+
+    /*
  :::::OLD SCRIPT:::::
         GameObject fireblast = Instantiate(projectile, transform) as GameObject;
             Rigidbody rb = fireblast.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * projectileSpeed);    
- * 
+            rb.AddForce(transform.forward * projectileSpeed);
  */
 }
