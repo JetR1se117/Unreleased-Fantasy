@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpHeight = 3.0f;
 
     public GameObject deathScreen;
+    public static PlayerController LocalPlayer;
     
     bool curserlock = true;
     float camerapitch = 0.0f;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LocalPlayer = this;
         health = InitialHealth;
         if (curserlock)
         {
@@ -159,6 +161,20 @@ public class PlayerController : MonoBehaviour
                     OnKill();
                 }
             }
+        }
+
+    }
+    public void Shot(int Damage)
+    {
+        if (health > 0)
+        {
+        health -= Damage;
+        Debug.Log("Player Hit, Remaining Health: " + health);
+        hurt = true;
+        }
+        else
+        {
+            OnKill();
         }
 
     }

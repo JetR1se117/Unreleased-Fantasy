@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
     public float health;
     public float waitingTime;
+    
 
     //from "FireBlast" script <James>
     public Rigidbody bulletPrefab;
@@ -88,6 +89,7 @@ public class EnemyAI : MonoBehaviour
         {
             //Attack
             Debug.Log("hit");
+            PlayerController.LocalPlayer.Shot(5);
             
                 shootfire();
 
