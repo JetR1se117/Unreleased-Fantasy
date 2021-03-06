@@ -14,10 +14,10 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAI - Copy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAIScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyShooterTEST.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spellcast/Spawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1onk9nzzob2Tzh3XdXkjrUHqL6A" />
@@ -67,6 +67,7 @@
       <workItem from="1614567907131" duration="296000" />
       <workItem from="1614594316532" duration="2414000" />
       <workItem from="1614598574838" duration="348000" />
+      <workItem from="1614599479132" duration="165000" />
     </task>
     <servers />
   </component>
