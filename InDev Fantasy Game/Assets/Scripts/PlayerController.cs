@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+
+
     [SerializeField] Transform playerCamera = null;
     [SerializeField] float Sensivity = 3.5f;
     [SerializeField] float Walkspeed = 6.0f;
