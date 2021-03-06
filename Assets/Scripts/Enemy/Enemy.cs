@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
+    // NOTE: This is legacy code. Only here due to external dependancies. Need to update PlayerController so it can be taken out.
+
+
     public int health = 5;
     public int damage = 5;
     private bool Killed = false;
