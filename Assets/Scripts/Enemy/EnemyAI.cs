@@ -84,7 +84,7 @@ public class EnemyAI : MonoBehaviour
                 agent.SetDestination(navPoints[destPoint].position);
                 distanceToWalkPoint = transform.position - navPoints[destPoint].position;
             }
-            if (distanceToWalkPoint.magnitude < 0.5f)
+            if (distanceToWalkPoint.magnitude < 0.7f)
             {
                 waiting = true;
                 searchWalkPoint();
@@ -95,6 +95,7 @@ public class EnemyAI : MonoBehaviour
 
     private void searchWalkPoint()
     {
+        Debug.Log("Searchig");
         if (waiting == true)
         {
             destPoint = (destPoint + 1) % navPoints.Length;
