@@ -893,6 +893,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2605810698822782795, guid: 7aef48c8eba34c949872ea702f54f070,
+        type: 3}
+      propertyPath: navPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605810698822782795, guid: 7aef48c8eba34c949872ea702f54f070,
+        type: 3}
+      propertyPath: canMelee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605810698822782795, guid: 7aef48c8eba34c949872ea702f54f070,
+        type: 3}
+      propertyPath: canFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605810698822782795, guid: 7aef48c8eba34c949872ea702f54f070,
+        type: 3}
+      propertyPath: PatrolSet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605810698822782795, guid: 7aef48c8eba34c949872ea702f54f070,
+        type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1318986518}
+    - target: {fileID: 2605810698822782795, guid: 7aef48c8eba34c949872ea702f54f070,
+        type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1205684636}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aef48c8eba34c949872ea702f54f070, type: 3}
 --- !u!1 &534669902
