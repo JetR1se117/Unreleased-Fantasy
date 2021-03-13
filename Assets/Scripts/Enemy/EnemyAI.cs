@@ -71,25 +71,30 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public bool PatrolSet = false;
+    
     private void Patrol()
     {
-        if (waiting == false)
+        if (PatrolSet)
         {
-            if (navPoints.Length == 0)
+            if (waiting == false)
             {
-                return;
-            }
-            else
-            {
-                agent.SetDestination(navPoints[destPoint].position);
-                distanceToWalkPoint = transform.position - navPoints[destPoint].position;
-            }
-            if (distanceToWalkPoint.magnitude < 0.7f)
-            {
-                waiting = true;
-                searchWalkPoint();
+                if (navPoints.Length == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    agent.SetDestination(navPoints[destPoint].position);
+                    distanceToWalkPoint = transform.position - navPoints[destPoint].position;
+                }
+                if (distanceToWalkPoint.magnitude < 0.7f)
+                {
+                    waiting = true;
+                    searchWalkPoint();
 
-            }
+                }
+            }   
         }
     }
 
@@ -103,6 +108,8 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public bool canFire;        //jc
+    public bool canMelee;       //jc
     private void Chase()
     {
         agent.SetDestination(player.position);
@@ -114,12 +121,20 @@ public class EnemyAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            //jc - I changed around the order for the if statements
             //Attack
-            Debug.Log("hit");
 
-            shootfire();
-            alreadyAttacked = true;
+            if (canMelee)
+            {
+                Debug.Log("hit");
+            }
+            if (canFire)
+            {
+                shootfire();
+                Debug.Log("hit");   // maybe need to change this to be player side on collision
+            }
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            alreadyAttacked = true;
         }
     }
     void shootfire()    // <James>
@@ -132,6 +147,15 @@ public class EnemyAI : MonoBehaviour
         //Shoot the Bullet in the forward direction of the player
         projectile.velocity = transform.forward * shootSpeed;
     }
+
+    private void OnCollisionEnter(Collision other)//jc
+    {
+        if (other.transform.tag == "")
+        {
+            TakeDamage(10);
+        }
+    }
+
     private void ResetAttack()
     {
         alreadyAttacked = false;
