@@ -309,19 +309,19 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

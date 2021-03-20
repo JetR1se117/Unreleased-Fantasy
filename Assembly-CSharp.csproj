@@ -67,9 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\damageAndEffectHandler.cs" />
+    <Compile Include="Assets\KillStreak.cs" />
     <Compile Include="Assets\KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\KY_effects\Script\Lighting.cs" />
+    <Compile Include="Assets\Scripts\damageAndEffectHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyShooterTEST.cs" />
@@ -81,25 +82,25 @@
     <Compile Include="Assets\Scripts\Spellcast\Spawner.cs" />
     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -303,7 +304,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy-06b8e9bfc4b26fc6b1f592176707e513c755dd64/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
