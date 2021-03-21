@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FireBlast : MonoBehaviour
 {
-
+    public Camera cam;
+    private Vector3 destination;
     public Rigidbody bulletPrefab;
     public float shootSpeed = 300;
     public Transform playerTrans;
+    public GameObject firePoint;
     float CoolDown = 0f;
     void Update()
     {
@@ -24,14 +26,25 @@ public class FireBlast : MonoBehaviour
 
     void shootfire()
     {
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.5f)); //creates direction based on camera
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit))// if raycast hits something make it as destination
+        {
+            destination = hit.point;
+        }
+        else
+        {
+            destination = ray.GetPoint(1000); // if not just make point on 1000 from camera as destination
+        }
+
         CoolDown = 1f;
         // Instantiate a new bullet at the players position and rotation
         // later you might want to add an offset here or 
         // use a dedicated spawn transform under the player
-        var projectile = Instantiate(bulletPrefab, playerTrans.position, playerTrans.rotation);
+        var projectile = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
 
         //Shoot the Bullet in the forward direction of the player
-        projectile.velocity = transform.forward * shootSpeed;
+        projectile.GetComponent<Rigidbody>().velocity = (destination - firePoint.transform.position).normalized * shootSpeed; //make distanation minus start point as direction and increase it by bullet speed 
     }
 }
 

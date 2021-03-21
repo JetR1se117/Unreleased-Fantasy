@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Spellcast\Projectile.cs" />
     <Compile Include="Assets\Scripts\Spellcast\Spawner.cs" />
     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
+    <None Include="Assets\Fps Arms Pack\---Read---.txt" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
