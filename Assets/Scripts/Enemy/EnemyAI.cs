@@ -38,6 +38,7 @@ public class EnemyAI : MonoBehaviour
     //Effects
     public GameObject[] effectParticle;
     public GameObject partical;
+    public GameObject currentEnemyGO;
 
     private void Awake()
     {
@@ -67,16 +68,15 @@ public class EnemyAI : MonoBehaviour
         if (playerInSightRange && playerInAttackRange) Attack();
         if (partical != null)
         {
-            partical.transform.parent = GameObject.Find("Enemy").transform;
+            partical.transform.parent = currentEnemyGO.transform;
         }
     }
 
-    public bool PatrolSet = false;
+    
     
     private void Patrol()
     {
-        if (PatrolSet)
-        {
+        
             if (waiting == false)
             {
                 if (navPoints.Length == 0)
@@ -95,12 +95,11 @@ public class EnemyAI : MonoBehaviour
 
                 }
             }   
-        }
+        
     }
 
     private void searchWalkPoint()
     {
-        Debug.Log("Searchig");
         if (waiting == true)
         {
             destPoint = (destPoint + 1) % navPoints.Length;
@@ -126,12 +125,10 @@ public class EnemyAI : MonoBehaviour
 
             if (canMelee)
             {
-                Debug.Log("hit");
             }
             if (canFire)
             {
                 shootfire();
-                Debug.Log("hit");   // maybe need to change this to be player side on collision
             }
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
             alreadyAttacked = true;
@@ -160,7 +157,7 @@ public class EnemyAI : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
@@ -177,6 +174,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void EffectApply(int effect)
     {
+        Debug.Log(effect);
         if (effectParticle.Length == 0)
         {
             return;
@@ -186,24 +184,16 @@ public class EnemyAI : MonoBehaviour
             switch (effect)
             {
                 case 1:
-                    partical = Instantiate(effectParticle[effect], agent.transform.position, Quaternion.identity) as GameObject;
+                    
+                    partical = Instantiate(effectParticle[effect - 1], currentEnemyGO.transform.position, Quaternion.identity);
                     Destroy(partical, 3);
                     break;
-                case 2:
-                    Instantiate(effectParticle[effect], transform.position, Quaternion.identity);
-                    effectParticle[effect].transform.parent = agent.transform;
-                    break;
-                case 3:
-                    Instantiate(effectParticle[effect], transform.position, Quaternion.identity);
-                    effectParticle[effect].transform.parent = agent.transform;
-                    break;
-                case 4:
-                    Instantiate(effectParticle[effect], transform.position, Quaternion.identity);
-                    effectParticle[effect].transform.parent = agent.transform;
-                    break;
             }
-
         }
+    }
+    public void CurrentEnemyGO(GameObject GO)
+    {
+        currentEnemyGO = GO;
     }
 }
 
