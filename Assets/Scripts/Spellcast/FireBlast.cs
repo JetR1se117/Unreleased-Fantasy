@@ -26,7 +26,7 @@ public class FireBlast : MonoBehaviour
 
     void shootfire()
     {
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.5f)); //creates direction based on camera
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)); //creates direction based on camera
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit))// if raycast hits something make it as destination
         {

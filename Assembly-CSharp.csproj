@@ -67,16 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\KillStreak.cs" />
     <Compile Include="Assets\KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\KY_effects\Script\Lighting.cs" />
-    <Compile Include="Assets\Scripts\damageAndEffectHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyDamageHandler.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyShooterTEST.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\ForceReceiver.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\player\damageAndEffectHandler.cs" />
+    <Compile Include="Assets\Scripts\player\DashAndBlock.cs" />
+    <Compile Include="Assets\Scripts\player\ForceReceiver.cs" />
+    <Compile Include="Assets\Scripts\player\KillStreak.cs" />
+    <Compile Include="Assets\Scripts\player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Spellcast\FireBlast.cs" />
     <Compile Include="Assets\Scripts\Spellcast\Projectile.cs" />
     <Compile Include="Assets\Scripts\Spellcast\Spawner.cs" />
