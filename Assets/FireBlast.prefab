@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4167460116768492378}
   - component: {fileID: 4445011779508131942}
   - component: {fileID: 4257922419650867970}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4711,10 +4711,8 @@ GameObject:
   - component: {fileID: 7568418433393135368}
   - component: {fileID: 951484216373384824}
   - component: {fileID: 3175663435406733652}
-  - component: {fileID: 114314106070528064}
-  - component: {fileID: 3835668086889203718}
   - component: {fileID: 1701935307088230324}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FireBlast
   m_TagString: SpellProj
   m_Icon: {fileID: 0}
@@ -4789,7 +4787,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3413679139389699527}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -4807,38 +4805,9 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &114314106070528064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3413679139389699527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f7310d60fc8b4408c9c376ff36fff4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionVFX: {fileID: 0}
---- !u!114 &3835668086889203718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3413679139389699527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcfaa338c154119489f573a44ead7323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 5
-  projectileLife: 5
-  speed: 5
-  lifetime: 2
+  m_CollisionDetection: 1
 --- !u!114 &1701935307088230324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4851,7 +4820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5335fb2d517291446921eba63654e297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDamage: 25
+  shootDamage: 10
   effect: 1
   hittedEnemy: {fileID: 0}
   player: {fileID: 0}
+  colided: 0

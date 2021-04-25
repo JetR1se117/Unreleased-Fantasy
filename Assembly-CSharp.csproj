@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Assets\KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\KY_effects\Script\Lighting.cs" />
+    <Compile Include="Assets\MagicSwitching.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyDamageHandler.cs" />
@@ -77,13 +78,32 @@
     <Compile Include="Assets\Scripts\player\damageAndEffectHandler.cs" />
     <Compile Include="Assets\Scripts\player\DashAndBlock.cs" />
     <Compile Include="Assets\Scripts\player\ForceReceiver.cs" />
+    <Compile Include="Assets\Scripts\player\HotKeyAbilitySystem.cs" />
     <Compile Include="Assets\Scripts\player\KillStreak.cs" />
     <Compile Include="Assets\Scripts\player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Spellcast\FireBlast.cs" />
     <Compile Include="Assets\Scripts\Spellcast\Projectile.cs" />
     <Compile Include="Assets\Scripts\Spellcast\Spawner.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Fps Arms Pack\---Read---.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/44730/Documents/Unreleased-Fantasy/Unreleased-Fantasy/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
