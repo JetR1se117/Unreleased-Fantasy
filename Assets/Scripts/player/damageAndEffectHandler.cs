@@ -18,7 +18,6 @@ public class damageAndEffectHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-
             hittedEnemy = other.gameObject;
             EnemyAI target = hittedEnemy.GetComponent<EnemyAI>();
             KillStreak tagetToKill = player.GetComponent<KillStreak>();
@@ -38,6 +37,19 @@ public class damageAndEffectHandler : MonoBehaviour
         {
             Physics.IgnoreCollision(other.collider, other.collider);
         }
+
+    }
+    public void GetGameobject(GameObject obj)
+    {
+
+        hittedEnemy = obj;
+        EnemyAI target = hittedEnemy.GetComponent<EnemyAI>();
+        KillStreak tagetToKill = player.GetComponent<KillStreak>();
+        target.TakeDamage(shootDamage);
+        target.CurrentEnemyGO(hittedEnemy);
+        target.EffectApply(effect);
+        tagetToKill.TagetHitted(hittedEnemy.gameObject, true);
+        Destroy(gameObject);
 
     }
 

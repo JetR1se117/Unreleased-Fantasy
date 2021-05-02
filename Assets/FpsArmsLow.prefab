@@ -454,7 +454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9210073116679094793}
   m_LocalRotation: {x: -0.27992257, y: -0.016817885, z: 0.13242649, w: 0.95069647}
-  m_LocalPosition: {x: 0.891, y: -0.434, z: 0.365}
+  m_LocalPosition: {x: 0.804, y: -0.162, z: 0.229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9210073115283823827}
@@ -867,7 +867,6 @@ MonoBehaviour:
   alllowButtonHold: 1
   magazinSize: 30
   bulletsPerTab: 1
-  damage: 20
   timeBetweenShooting: 0.05
   spread: 0.02
   range: 10

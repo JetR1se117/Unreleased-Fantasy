@@ -22,6 +22,8 @@ public class FireBlast : MonoBehaviour
     public float shootSpeed = 300;
     public Transform playerTrans;
     public Transform firePoint;
+    public float lifeTime;
+
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class FireBlast : MonoBehaviour
     }
     private void Update()
     {
+        
         MyInput();
 
         text.SetText(bulletLeft + "/" + magazinSize);
@@ -66,15 +69,17 @@ public class FireBlast : MonoBehaviour
         readyToShoot = false;
 
 
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.6f, 0.4f, 0f)); //creates direction based on camera
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.48f, 0.5f, 0f)); //creates direction based on camera
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))// if raycast hits something make it as destination
         {
             destination = hit.point;
+            
         }
         else
         {
             destination = ray.GetPoint(75); // if not just make point on 1000 from camera as destination
+            
         }
         Vector3 directionWithoutSpread = destination - firePoint.position;
 
@@ -92,9 +97,9 @@ public class FireBlast : MonoBehaviour
 
         //Shoot the Bullet in the forward direction of the player
         //projectile.GetComponent<Rigidbody>().velocity = (destination - firePoint.transform.position).normalized * shootSpeed; //make distanation minus start point as direction and increase it by bullet speed
-        if (projectile.transform.position == hit.point)
+        if (destination != null)
         {
-            Destroy(projectile);
+            Destroy(projectile, lifeTime);
         }
 
         bulletLeft--;

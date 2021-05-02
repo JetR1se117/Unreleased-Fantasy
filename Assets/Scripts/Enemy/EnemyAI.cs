@@ -11,11 +11,16 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
     public float health;
     public float waitingTime;
+    public bool ableToMove = true;
+    public bool ableToAttack = true;
+    public float effectWaitingTime;
+    public effectColider cloneContainer;
 
     //from "FireBlast" script<James>
     public Rigidbody bulletPrefab;
     public float shootSpeed = 100;
     public Transform playerTrans;
+    Transform effectTaker;
     // </James>
 
     //Idle
@@ -23,6 +28,10 @@ public class EnemyAI : MonoBehaviour
     public int destPoint = 0;
     public Vector3 distanceToWalkPoint;
     public bool waiting = false;
+    private float y;
+    private float x;
+    private float z;
+
 
     //Attacking 
     public float timeBetweenAttacks;
@@ -42,12 +51,21 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-
+        cloneContainer = FindObjectOfType<effectColider>();
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
+        if(currentEnemyGO != null)
+        {
+            if (currentEnemyGO.GetComponent<EnemyAI>().ableToMove == false)
+            {
+
+                currentEnemyGO.transform.position = new Vector3(x, y, z);
+            }
+        }
+        
         playerDir = player.position - transform.position;
         playerAngel = Vector3.Angle(playerDir, transform.forward);
         playerInAngel = playerAngel < maxAngel;
@@ -70,12 +88,15 @@ public class EnemyAI : MonoBehaviour
         {
             partical.transform.parent = currentEnemyGO.transform;
         }
+       
     }
 
     
     
     private void Patrol()
     {
+        if (ableToMove == true)
+        {
         
             if (waiting == false)
             {
@@ -94,16 +115,18 @@ public class EnemyAI : MonoBehaviour
                     searchWalkPoint();
 
                 }
-            }   
-        
+            }
+        }
+
     }
 
     private void searchWalkPoint()
     {
+
         if (waiting == true)
         {
             destPoint = (destPoint + 1) % navPoints.Length;
-            StartCoroutine(Wait());
+            StartCoroutine(Wait(waitingTime));
         }
     }
 
@@ -111,28 +134,35 @@ public class EnemyAI : MonoBehaviour
     public bool canMelee;       //jc
     private void Chase()
     {
-        agent.SetDestination(player.position);
+        if (ableToMove == true)
+        {
+            agent.SetDestination(player.position);
+        }
     }
     private void Attack()
     {
-        agent.SetDestination(transform.position);
-        transform.LookAt(player);
-
-        if (!alreadyAttacked)
+        if (ableToAttack == true)
         {
-            //jc - I changed around the order for the if statements
-            //Attack
+            agent.SetDestination(transform.position);
+            transform.LookAt(player);
 
-            if (canMelee)
+            if (!alreadyAttacked)
             {
+                //jc - I changed around the order for the if statements
+                //Attack
+
+                if (canMelee)
+                {
+                }
+                if (canFire)
+                {
+                    shootfire();
+                }
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                alreadyAttacked = true;
             }
-            if (canFire)
-            {
-                shootfire();
-            }
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-            alreadyAttacked = true;
         }
+       
     }
     void shootfire()    // <James>
     {
@@ -167,14 +197,40 @@ public class EnemyAI : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    IEnumerator Wait()
+    IEnumerator Wait(float time)
     {
-        yield return new WaitForSeconds(waitingTime);
-        waiting = false;
+        //Debug.Log(time);
+        yield return new WaitForSeconds(time);
+        
+        //if(time == waitingTime)
+            waiting = false;
+
+        //else if(time == effectWaitingTime)
+        //    ableToAttack = true;
+        //    ableToMove = true;
+        //    Debug.Log(time);
+
+    }
+    IEnumerator WaitEffectTime(float effectTime)
+    {
+        yield return new WaitForSeconds(effectTime);
+        ableToAttack = true;
+        ableToMove = true;
+        cloneContainer.destroyEffect(true);
+
+
+
+
+
+    }
+    public void CurrentEnemyGO(GameObject GO)
+    {
+        currentEnemyGO = GO;
+        effectTaker = currentEnemyGO.transform.GetChild(2);
+
     }
     public void EffectApply(int effect)
     {
-        Debug.Log(effect);
         if (effectParticle.Length == 0)
         {
             return;
@@ -184,16 +240,25 @@ public class EnemyAI : MonoBehaviour
             switch (effect)
             {
                 case 1:
+                    x = currentEnemyGO.transform.position.x;
+                    y = currentEnemyGO.transform.position.y;
+                    z = currentEnemyGO.transform.position.z;
+                    GameObject currEffect = effectParticle[effect - 1];
+                    effectTaker = currentEnemyGO.transform.GetChild(2);
+                    Vector3 newEffectTakerPostion = new Vector3(effectTaker.transform.position.x - 0.50f, effectTaker.transform.position.y, effectTaker.transform.position.z);
+
+                    cloneContainer.effectTriger(newEffectTakerPostion, currEffect);
+                   
+
+                    currentEnemyGO.GetComponent<EnemyAI>().ableToAttack = false;
+                    currentEnemyGO.GetComponent<EnemyAI>().ableToMove = false;
                     
-                    partical = Instantiate(effectParticle[effect - 1], currentEnemyGO.transform.position, Quaternion.identity);
-                    Destroy(partical, 3);
+                    StartCoroutine(WaitEffectTime(effectWaitingTime));
+                    //currentEnemyGO.GetComponent<Rigidbody>().AddForce(Vector3.zero);
+                    // Instantiate(effect, position, new Quaternion()) as GameObject;
                     break;
             }
         }
-    }
-    public void CurrentEnemyGO(GameObject GO)
-    {
-        currentEnemyGO = GO;
     }
 }
 
