@@ -46456,7 +46456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5335fb2d517291446921eba63654e297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDamage: 5
+  shootDamage: 10
   effect: 1
   hittedEnemy: {fileID: 0}
   player: {fileID: 0}
